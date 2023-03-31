@@ -110,11 +110,11 @@
         </dependency>
 
         <!--Mysql-->
-        <dependency>
+        <!--<dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
-        </dependency>
+        </dependency>-->
 
         <!--mssql-->
         <!--  <dependency>
@@ -138,11 +138,11 @@
           </dependency>-->
 
         <!--postgresql-->
-        <!-- <dependency>
+        <dependency>
              <groupId>org.postgresql</groupId>
              <artifactId>postgresql</artifactId>
              <scope>runtime</scope>
-         </dependency>-->
+         </dependency>
 
         <!--Junit Test-->
         <dependency>
