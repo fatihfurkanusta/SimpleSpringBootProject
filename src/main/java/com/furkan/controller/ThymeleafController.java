@@ -1,9 +1,13 @@
 package com.furkan.controller;
 
+import com.furkan.dto.ProductDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ThymeleafController {
@@ -36,5 +40,37 @@ public class ThymeleafController {
     public String getThymeleaf4Model(Model model){
         model.addAttribute("key_model1","Ben Modelden geldim.");
         return "thymeleaf4";
+    }
+
+    // Model Object Göndermek
+
+    //http://localhost:8080/thymeleaf5
+    @GetMapping("/thymeleaf5")
+    public String getThymeleaf5ModelObject(Model model){
+        model.addAttribute("key_model1","text");
+
+        ProductDto productDto = ProductDto.builder().productId(0L).productName("Ürün Adı").productPrice(2500).build();
+
+        model.addAttribute("key_model2",productDto);
+
+        return "thymeleaf5";
+    }
+
+    ////////////////////// Model Object List göndermek /////////////////
+    //http://localhost:8080/thymeleaf6
+    @GetMapping("/thymeleaf6")
+    public String getThymeleaf6ModelObjectList(Model model){
+        model.addAttribute("key_model1","text");
+        List<ProductDto> myList = new ArrayList<>();
+
+        myList.add(ProductDto.builder().productId(0L).productName("Ürün Adı1").productPrice(1500).build());
+        myList.add(ProductDto.builder().productId(1L).productName("Ürün Adı2").productPrice(2500).build());
+        myList.add(ProductDto.builder().productId(2L).productName("Ürün Adı3").productPrice(3500).build());
+        myList.add(ProductDto.builder().productId(3L).productName("Ürün Adı4").productPrice(4500).build());
+
+
+        model.addAttribute("productList", myList);
+
+        return "thymeleaf6";
     }
 }
