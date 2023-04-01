@@ -1,4 +1,4 @@
-package com.furkan.dataAccess;
+package com.furkan.bussines.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

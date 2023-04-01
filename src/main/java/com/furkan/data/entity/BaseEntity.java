@@ -1,4 +1,4 @@
-package com.furkan.entity;
+package com.furkan.data.entity;
 
 import lombok.Getter;
 import lombok.Setter;

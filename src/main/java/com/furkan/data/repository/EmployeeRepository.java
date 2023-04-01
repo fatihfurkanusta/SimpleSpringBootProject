@@ -1,4 +1,4 @@
-package com.furkan.repository;
+package com.furkan.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
