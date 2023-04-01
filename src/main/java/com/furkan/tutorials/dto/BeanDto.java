@@ -1,4 +1,4 @@
-package com.furkan.dto;
+package com.furkan.tutorials.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

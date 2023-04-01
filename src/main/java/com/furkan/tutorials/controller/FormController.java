@@ -1,6 +1,6 @@
-package com.furkan.controller;
+package com.furkan.tutorials.controller;
 
-import com.furkan.dto.TeacherDto;
+import com.furkan.tutorials.dto.TeacherDto;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

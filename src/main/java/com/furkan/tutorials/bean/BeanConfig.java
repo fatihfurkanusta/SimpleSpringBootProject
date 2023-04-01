@@ -1,6 +1,6 @@
-package com.furkan.bean;
+package com.furkan.tutorials.bean;
 
-import com.furkan.dto.BeanDto;
+import com.furkan.tutorials.dto.BeanDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
