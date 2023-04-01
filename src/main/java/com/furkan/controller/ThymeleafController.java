@@ -4,6 +4,7 @@ import com.furkan.dto.ProductDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -11,6 +12,12 @@ import java.util.List;
 
 @Controller
 public class ThymeleafController {
+
+    //http://localhost:8080/
+    @GetMapping({"/", "index"})     // Opsiyonel Yapı. option root{}
+    public String index(){
+        return "index";
+    }
 
     //http://localhost:8080/thymeleaf1
     @GetMapping("/thymeleaf1")
@@ -68,9 +75,18 @@ public class ThymeleafController {
         myList.add(ProductDto.builder().productId(2L).productName("Ürün Adı3").productPrice(3500).build());
         myList.add(ProductDto.builder().productId(3L).productName("Ürün Adı4").productPrice(4500).build());
 
-
         model.addAttribute("productList", myList);
-
         return "thymeleaf6";
+    }
+
+    //http://localhost:8080/thymeleaf7
+    @GetMapping({"/thymeleaf7","/thymeleaf7/{id}"})
+    public String getThymeleaf7ModelObject(Model model, @PathVariable(name="id", required = false) Long id){
+        if(id!=null){
+            model.addAttribute("key_model1","id "+id);
+        }else{
+            model.addAttribute("key_model1","id bulunamadı");
+        }
+        return "thymeleaf7";
     }
 }
